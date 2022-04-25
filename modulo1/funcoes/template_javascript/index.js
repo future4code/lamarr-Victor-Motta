@@ -71,32 +71,15 @@
 
 //Ex3
 
-function soma (num1,num2){
-    let somando = (num1+num2)
-    console.log(`resultado soma = ${somando}`)   
+function Calculadora (num1,num2){
+    
+      num1 = Number(prompt("Escreva um numero"))
+      num2 = Number(prompt("Escreva outro numero para operar"))
+      console.log(`Numeros inseridos = ${num1,num2}`)
+    console.log(`resultado soma = ${num1+num2}`)   
+    console.log(`resultado subtracao = ${num1-num2}`)
+    console.log(`resultado multiplicacao = ${num1*num2}`)
+    console.log(`resultado divisao = ${num1/num1}`)
 }
 
-function subtracao(num1,num2){
-    let subtracao = (num1-num2)
-    console.log(`resultado subtracao = ${subtracao}`)
-}
-function multiplicacao(num1,num2){
-    let mult = (num1*num2)
-  console.log(`resultado multiplicacao = ${mult}`)
-}
-function divisao(num1,num2){
-    let div = (num1/num2)
-  console.log(`resultado divisao = ${div}`)
-}
-
-// soma (prompt("Escolha 1 numero para somar"),(prompt("Escolha outro numero para somar")))
-
-//O resultado quando estou usando prompt da errado, pois a funcao nao entende que 
-//os parametros sao numeros. Achei o comando "parseInt" porem o exercicio nao permite usar
-
-
-soma (10,20)
-subtracao(10,20)
-multiplicacao(10,20)
-divisao(10,20)
-
+Calculadora()
