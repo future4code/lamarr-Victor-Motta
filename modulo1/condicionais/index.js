@@ -27,55 +27,55 @@
 // o resultado.
 
 
-// //Ex escrita de código
+// // //Ex escrita de código
+// // //1.
+// let idade = Number(prompt("Qual sua idade?"))
+// if (idade >= 18) {console.log("voce vode dirigir!")}
+// else {console.log("Voce nao pode dirigir")
+// }
+
+// // //2.
+// let turno = (prompt(" Em qual periodo vc estuda ? Utilize = M (matutino) ou V (Vespertino) ou N (Noturno)"))
+
+// if (turno === "M"){console.log("Bom dia")}
+// else if (turno === "V") {console.log("Boa tarde")}
+// else if (turno === "N"){console.log("Boa noite")}
+// else {console.log("Error, favor inserir carcatere correto")}
+
+// // //3.
+
+// let turno1 = prompt(" Em qual periodo vc estuda ? Utilize = M (matutino) ou V (Vespertino) ou N (Noturno)")
+// let mensagem
+// switch (turno1) {
+//     case "M":
+//     mensagem = "Bom dia"
+//     break;
+//     case "V":
+//     mensagem = "Boa tarde"
+//     break;
+//     case "N":
+//     mensagem = "Boa noite"
+//     break;
+//     default: 
+//     mensagem = "Error, favor inserir caracatere correto"
+// }
+// console.log(mensagem)
+
+// // //4.
+
+// let genero = prompt(" Qual genero do filme")
+// let valorIngresso = Number(prompt("Qual preco do ingresso?"))
+// if  (genero === "fantasia" && valorIngresso <= 15){ console.log("Bom filme!")}
+// else {console.log("Escolha outro filme :(")}
+
+// // //Desafios
 // //1.
-let idade = Number(prompt("Qual sua idade?"))
-if (idade >= 18) {console.log("voce vode dirigir!")}
-else {console.log("Voce nao pode dirigir")
-}
-
-// //2.
-let turno = (prompt(" Em qual periodo vc estuda ? Utilize = M (matutino) ou V (Vespertino) ou N (Noturno)"))
-
-if (turno === "M"){console.log("Bom dia")}
-else if (turno === "V") {console.log("Boa tarde")}
-else if (turno === "N"){console.log("Boa noite")}
-else {console.log("Error, favor inserir carcatere correto")}
-
-// //3.
-
-let turno1 = prompt(" Em qual periodo vc estuda ? Utilize = M (matutino) ou V (Vespertino) ou N (Noturno)")
-let mensagem
-switch (turno1) {
-    case "M":
-    mensagem = "Bom dia"
-    break;
-    case "V":
-    mensagem = "Boa tarde"
-    break;
-    case "N":
-    mensagem = "Boa noite"
-    break;
-    default: 
-    mensagem = "Error, favor inserir caracatere correto"
-}
-console.log(mensagem)
-
-// //4.
-
-let genero = prompt(" Qual genero do filme")
-let valorIngresso = Number(prompt("Qual preco do ingresso?"))
-if  (genero === "fantasia" && valorIngresso <= 15){ console.log("Bom filme!")}
-else {console.log("Escolha outro filme :(")}
-
-// //Desafios
-//1.
-let genero1 = prompt(" Qual genero do filme")
-let valorIngresso1 = Number(prompt("Qual preco do ingresso?"))
-let lanchinho = prompt(" Qual lanchinho vc vai comprar?")
-if  (genero1 === "fantasia" && valorIngresso1 <= 15){ console.log(`Bom filme!`),
-console.log(`Aproveite o seu ${lanchinho}`)}
-else {console.log("Escolha outro filme :(")}
+// let genero1 = prompt(" Qual genero do filme")
+// let valorIngresso1 = Number(prompt("Qual preco do ingresso?"))
+// let lanchinho = prompt(" Qual lanchinho vc vai comprar?")
+// if  (genero1 === "fantasia" && valorIngresso1 <= 15){ console.log(`Bom filme!`),
+// console.log(`Aproveite o seu ${lanchinho}`)}
+// else {console.log("Escolha outro filme :(")}
 
 //2.
 let nomeUsuario = prompt("Insira seu nome")
@@ -83,8 +83,8 @@ let jogoIntenacinalOuDomestico = prompt("Para jogo internacional insira IN | Par
 let etapaDoJogo = prompt("Para Semi-final insira SF | Para decisao de terceiro lugar insira DT| Para final sinria FI")
 let categoria = prompt( "Insira categoria (1,2,3 ou 4)")
 let quantidade = Number(prompt("Quantidade de ingressos"))
-let valor = Number()
-let todasInfos = [jogoIntenacinalOuDomestico,etapaDoJogo,categoria]
+let valor 
+
 
 let imprimirJogoInOuDom
 let imprimirEtapaJogo
@@ -114,34 +114,36 @@ switch (etapaDoJogo){
 }
 
 //Valor local
- if (todasInfos ==="DO"&&"SF"&&"1"){ valor = 1320.00 }
- else if (todasInfos ==="DO"&&"SF"&&"2"){ valor = 880.00 }
- else if (todasInfos ==="DO"&&"SF"&&"3"){ valor = 550.00 }
- else if (todasInfos ==="DO"&&"SF"&&"4"){ valor = 220.00 }
- else if (todasInfos ==="DO"&&"DT"&&"1"){ valor = 660.00 }
- else if (todasInfos ==="DO"&&"DT"&&"2"){ valor = 440.00 }
- else if (todasInfos ==="DO"&&"DT"&&"3"){ valor = 330.00 }
- else if (todasInfos ==="DO"&&"DT"&&"4"){ valor = 170.00 }
- else if (todasInfos ==="DO"&&"FI"&&"1"){ valor = 1980.00 }
- else if (todasInfos ==="DO"&&"FI"&&"2"){ valor = 1320.00 }
- else if (todasInfos ==="DO"&&"FI"&&"3"){ valor = 880.00 }
- else if (todasInfos ==="DO"&&"FI"&&"4"){ valor = 330.00 }
+let declarandoValores = function (){
+ if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="SF"&&categoria==="1"){  valor = 1320.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="SF"&&categoria==="2"){ valor = 880.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="SF"&&categoria==="3"){ valor = 550.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="SF"&&categoria==="4"){ valor = 220.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="1"){ valor = 660.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="2"){ valor = 440.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="3"){ valor = 330.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="4"){ valor = 170.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="FI"&&categoria==="1"){ valor = 1980.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="FI"&&categoria==="2"){ valor = 1320.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="3"){ valor = 880.00 }
+ else if (jogoIntenacinalOuDomestico  ==="DO"&&etapaDoJogo==="DT"&&categoria==="4"){ valor = 330.00 }
  
 //Valor Internacional
-else if(todasInfos ==="IN"&&"SF"&&"1"){ valor = 1320.00*4.10 }
- else if (todasInfos ==="IN"&&"SF"&&"2"){ valor = 880.00*4.10 }
- else if (todasInfos ==="IN"&&"SF"&&"3"){ valor = 550.00*4.10 }
- else if (todasInfos ==="IN"&&"SF"&&"4"){ valor = 220.00*4.10 }
- else if (todasInfos ==="IN"&&"DT"&&"1"){ valor = 660.00*4.10 }
- else if (todasInfos ==="IN"&&"DT"&&"2"){ valor = 440.00*4.10 }
- else if (todasInfos ==="IN"&&"DT"&&"3"){ valor = 330.00*4.10 }
- else if (todasInfos ==="IN"&&"DT"&&"4"){ valor = 170.00*4.10 }
- else if (todasInfos ==="IN"&&"FI"&&"1"){ valor = 1980.00*4.10 }
- else if (todasInfos ==="IN"&&"FI"&&"2"){ valor = 1320.00*4.10 }
- else if (todasInfos ==="IN"&&"FI"&&"3"){ valor = 880.00*4.10 }
- else if (todasInfos ==="IN"&&"FI"&&"4"){ valor = 330.00*4.10 }
-
-
+else if(jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="SF"&&categoria==="1"){ valor = 1320.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="SF"&&categoria==="2"){ valor = 880.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="SF"&&categoria==="3"){ valor = 550.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="SF"&&categoria==="4"){ valor = 220.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="DT"&&categoria==="1"){ valor = 660.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="DT"&&categoria==="2"){ valor = 440.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="DT"&&categoria==="3"){ valor = 330.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="DT"&&categoria==="4"){ valor = 170.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="FI"&&categoria==="1"){ valor = 1980.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="FI"&&categoria==="2"){ valor = 1320.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="FI"&&categoria==="3"){ valor = 880.00*4.10 }
+ else if  (jogoIntenacinalOuDomestico  ==="IN"&&etapaDoJogo==="FI"&&categoria==="4"){ valor = 330.00*4.10 }
+ else {console.log ("erro atribuir valor")}
+ 
+}
 
 if (jogoIntenacinalOuDomestico==="DO"){
 console.log("--- Dados da compra ---")
@@ -164,6 +166,7 @@ else if (jogoIntenacinalOuDomestico==="IN"){
     console.log(`---Valores---`)
     console.log(`valores do ingresso : U$ ${valor}`)
     console.log(`Valor total : U$ ${valor}`)}
-    
+
+    else {console.log("erro impressao final")}
 
 
