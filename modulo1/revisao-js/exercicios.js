@@ -90,40 +90,106 @@ return triangulo
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+  function novoArray (a,b){
+    return a-b;
+  }
+array.sort(novoArray)
+
+let maior2 = array[array.length-2]
+let menor2 = array[1]
+return[maior2,menor2]
+
 }
+
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+  
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores.join([separador = `, `] )}.`
+
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
+  //tentativa 1, com o .map
+  // let novaPessoa = {...pessoa}
+  // let arrayNomeAnonimo = novaPessoa.map((nome) => {
+  // return nome.nome = "ANÔNIMO"})
+  // return arrayNomeAnonimo
+
+    let novaPessoa = {
+      ...pessoa,
+    nome : "ANÔNIMO" }
+    return novaPessoa
+  }
    
-}
 
 // EXERCÍCIO 13A
+//primeira tentativa cod
 function retornaPessoasAutorizadas(pessoas) {
-   
+  let podeEntrarNoBrinquedo = []
+  for (let pessoaAutorizada of pessoas){
+    if (pessoaAutorizada.altura>= 1.5&&pessoaAutorizada.idade>14&&pessoaAutorizada.idade<Number(60)
+    ){
+      podeEntrarNoBrinquedo.push(pessoaAutorizada)}
+    
+  }
+  return podeEntrarNoBrinquedo
 }
+// return pessoas.filter(pessoaAutorizada =>{
+// return (
+//   pessoaAutorizada.altura>=1.5&&
+//   pessoaAutorizada.idade>14&&
+//   pessoaAutorizada.idade<60)
+// })
+
+// }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let naoPodeEntrarNoBrinquedo = []
+  for (let pessoaNaoAutorizada of pessoas){
+    if (pessoaNaoAutorizada.altura<= 1.5||pessoaNaoAutorizada.idade<=14||pessoaNaoAutorizada.idade>60
+    ){
+      naoPodeEntrarNoBrinquedo.push(pessoaAutorizada)}
+    
+  }
+  return naoPodeEntrarNoBrinquedo
 }
+
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+  
+for (let i=0; i<contas.length; i++)
+{
+let somaCompras = 0
+for (let valores of contas[i].compras){
+   somaCompras = somaCompras+valores;
+  contas[i].saldoTotal = contas[i].saldoTotal-somaCompras;
+  return contas
 }
+}
+return contas
+}
+
+
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  let arrayOrdenado = consultas.sort(function(a,b){
+    if (a.nome>b.nome){return 1;}
+    if (a.nome<b.nome){return-1;}
+  })
+  return arrayOrdenado
 }
 
+
 // EXERCÍCIO 15B
-function retornaArrayOrdenadoPorData(consultas) {
+// function retornaArrayOrdenadoPorData(consultas) {
+//   let arrayOrdenado = consultas.sort(function(a,b){
+//    return a.dataDaConsulta < b.dataDaConsulta
+// })
+// return arrayOrdenado 
+// } 
    
-}
