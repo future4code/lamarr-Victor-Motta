@@ -161,14 +161,13 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
   
-for (let i=0; i<contas.length; i++)
+for (let c of contas)
 {
 let somaCompras = 0
-for (let valores of contas[i].compras){
-   somaCompras = somaCompras+valores;
-  contas[i].saldoTotal = contas[i].saldoTotal-somaCompras;
-  return contas
-}
+for (let i=0; i<c.compras.length; i++){
+   somaCompras += c.compras[i];}
+c.saldoTotal -=somaCompras;
+c.compras =[]
 }
 return contas
 }
