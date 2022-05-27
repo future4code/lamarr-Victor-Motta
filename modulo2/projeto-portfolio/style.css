@@ -1,0 +1,102 @@
+* { margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+body{background-image: url(imagens/brennan-burling-ay53qag90W8-unsplash.jpg);
+    background-repeat:  no-repeat;
+    background-size: cover;
+   position:relative;
+
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: beige;
+    font-size: 40px;
+}    
+
+.a1{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    padding: 30px;
+    transition: 0.3s;
+}
+.a1:hover{
+    background-color: rgb(55, 102, 231)
+}
+.header-site{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background: rgb(45, 49, 44);
+    height: 10vh;
+}
+
+.texto-index{
+    border-radius: 50px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgba(63, 56, 56, 0.75);
+    font-size: 2em;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    margin:5%;
+    padding: 5%;
+}
+
+.foto-victor{
+height:350px;
+ width:350px;
+ object-fit: contain;
+ object-position: center;
+ margin: auto;
+ border-radius: 100%;
+}
+
+.sobremim{
+    border-radius: 50px;
+    text-align: center;
+    background-color: rgba(63, 56, 56, 0.75);
+    font-size: 2em;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5%;
+    padding: 5%;
+}
+.sobremim.h2{
+    padding: 35px;}
+
+.lista-empregos{
+    padding: 20px;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+}
+.Projetos{
+    border-radius: 50px;
+    text-align: center;
+    background-color: rgba(63, 56, 56, 0.75);
+    font-size: 2em;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5%;
+    padding: 5%;
+}
+.redes {
+    border-radius: 50px;
+    background-color: rgba(63, 56, 56, 0.75);
+    padding:10px;
+    display: flex;
+    text-align: center;
+    justify-content:space-around;
+    width: 25%;
+    
+}
+.redes img{
+    position:static;
+    width: 40%;
+}
