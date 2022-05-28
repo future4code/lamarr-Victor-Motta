@@ -51,26 +51,21 @@ h1{
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.foto-victor{
+#foto-victor{
 height:350px;
  width:350px;
  object-fit: contain;
  object-position: center;
  margin: auto;
  border-radius: 100%;
-
 }
-.logos-linguagens img{
-    padding-top: 40px; 
-    height:300px;
-    width:350px;
+.texto-index img{
+    height:250px;
+    width:250px;
     object-fit: contain;
-   text-align: center;
-    margin: auto;
+ object-position: center;
+ margin: auto;
 
-}
-.logos-linguagens table{
-    margin: 40px;
 }
 .sobremim{
     border-radius: 50px;
