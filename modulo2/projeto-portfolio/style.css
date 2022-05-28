@@ -47,7 +47,10 @@ h1{
     margin:5%;
     padding: 5%;
 }
-
+.texto-index p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .foto-victor{
 height:350px;
  width:350px;
@@ -55,8 +58,20 @@ height:350px;
  object-position: center;
  margin: auto;
  border-radius: 100%;
-}
 
+}
+.logos-linguagens img{
+    padding-top: 40px; 
+    height:300px;
+    width:350px;
+    object-fit: contain;
+   text-align: center;
+    margin: auto;
+
+}
+.logos-linguagens table{
+    margin: 40px;
+}
 .sobremim{
     border-radius: 50px;
     text-align: center;
@@ -67,9 +82,12 @@ height:350px;
     margin: 5%;
     padding: 5%;
 }
-.sobremim.h2{
-    padding: 35px;}
-
+.sobremim p{
+    padding-top: 20px;
+}
+.sobremim h2{
+    padding-bottom: 20px;
+}
 .lista-empregos{
     padding: 20px;
     text-decoration: none;
@@ -86,17 +104,61 @@ height:350px;
     margin: 5%;
     padding: 5%;
 }
-.redes {
-    border-radius: 50px;
-    background-color: rgba(63, 56, 56, 0.75);
-    padding:10px;
-    display: flex;
+.Projetos p{
+    padding-top: 20px;
+}
+.Projetos img{
+    margin-top: 50px;
+    width: 300px;
+    border-radius: 5%;
+}
+.Caixa-contato{border-radius: 50px;
     text-align: center;
-    justify-content:space-around;
-    width: 25%;
+    background-color: rgba(63, 56, 56, 0.75);
+    font-size: 2em;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5%;
+    padding: 5%;
+}
+.Caixa-contato form{
+  text-align: center;
+  padding: 20px;
+}
+.Caixa-contato p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.Caixa-contato button{
+   
+    display: block;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    margin-right: auto; 
+    margin-left: auto;
+    margin-top: 20px;
+    cursor: pointer;
     
 }
-.redes img{
-    position:static;
-    width: 40%;
+.Caixa-contato button:hover{
+    background-color:rgb(55, 102, 231);
+
+}
+.Caixa-contato input{
+    margin:20px;
+    font-size: 25px;
+}
+.Caixa-contato textarea{
+    font-size: 30px;
+}
+footer{
+    bottom: 0;
+    text-align:center;
+}
+
+.redes img:hover{
+    background-color:rgb(55, 102, 231);
+    border-radius: 100%;
+    
 }
