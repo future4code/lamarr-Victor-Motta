@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+h1 {
+    margin-left: 10px;
+   
+}
+input{
+    margin-right: 20px;
+}
+main{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 80px;
+
+}
+.videoCards{
+    display: grid;
+    border: 1px solid green;
+    text-align: center;
+   
+}
+.videoCards img{
+    width: 300px;
+    height: 250px;
+    
+   
+}
