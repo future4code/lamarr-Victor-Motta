@@ -14,16 +14,33 @@ h1 {
     margin-left: 10px;
    
 }
+
 input{
     margin-right: 20px;
 }
-main{
+.index{
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
     margin: 80px;
 
+}
+.video1{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 80px;
+   
+}
+.video2{ display: grid;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 80px;
+    
 }
 .videoCards{
     display: grid;
@@ -32,8 +49,26 @@ main{
    
 }
 .videoCards img{
-    width: 300px;
-    height: 250px;
+    display: grid;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+   
+}
+video{ display: grid;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
     
+   
+
+}
+footer{
+    background-color: grey;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    justify-content: center;
    
 }
