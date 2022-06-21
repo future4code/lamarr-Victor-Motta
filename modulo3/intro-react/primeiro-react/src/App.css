@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.App-foto {
+  height: 40vmin;
+  pointer-events: none;
+  border-radius:20%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+button{
+  padding: 15px;
+  border-radius: 15px;
+
+}
+
+button:hover{
+  background-color: rgb(27, 27, 27);
+  color: white;
+}
