@@ -1,9 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Post from "./components/Post/Post";
 import "./style.css";
+import styled from 'styled-components';
+
+const Form = styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding: 10px;
+margin: 10px;
+background-color:grey;
+
+ label{
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:30px;
+}
+input{
+  text-align: center;
+  height:5vh;
+  width:20vw;
+  border-radius:20px;
+  font-style:bold;
+  
+} 
+
+button{
+  font-weight:bold;
+  font-size:large;
+  margin-top:20px;
+  width:15vw;
+  height:7vh;
+  border-radius:40px;
+
+}
+button:hover{
+  cursor:pointer;
+  background-color:lightcoral;
+  
+} 
+`
 
 function App() {
-  const arrayPost = [
+
+  //estados
+  const [inputTexto1, setInputTexto1] = useState("")
+  const [inputTexto2, setInputTexto2] = useState("")
+  const [inputTexto3, setInputTexto3] = useState("")
+  
+
+  const [arrayPost,setArrayPost] = useState([
     {
       nomeUsuario: `vitinho`,
       fotoUsuario:
@@ -25,7 +72,28 @@ function App() {
       fotoPost:
         "https://images.unsplash.com/photo-1588844467563-df6c1fa2a2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
     },
-  ];
+  ]);
+
+  //eventos
+  const handleInputTexto1 = (event) => {
+    setInputTexto1(event.target.value)
+  }
+  const handleInputTexto2 = (event) => {
+    setInputTexto2(event.target.value)
+  }
+  const handleInputTexto3 = (event) => {
+    setInputTexto3(event.target.value)
+  }
+
+  // adicionat item
+  const addTexto1 = () => {
+    const novoTexto1 = {nomeUsuario: inputTexto1, fotoPost: inputTexto2,fotoUsuario: inputTexto3}
+    const novaListaDeTexto = [...arrayPost,novoTexto1]
+    setArrayPost(novaListaDeTexto)
+
+  }
+
+  
   const listaDePost = arrayPost.map((elemento, index) => {
     return (
       <Post
@@ -37,7 +105,35 @@ function App() {
     );
   });
 
-  return <div className="MainContainer">{listaDePost} </div>;
+  return (
+  
+  <div className="MainContainer">{listaDePost}
+  <Form>
+      <label>Nome</label>
+      <input type="text"
+        placeholder="Insira seu nome de usuario"
+        value={inputTexto1}
+        onChange={handleInputTexto1}
+        /> 
+      <label>Foto</label>
+      <input type="img"
+        placeholder="Insira um url de img"
+        value={inputTexto2}
+        onChange={handleInputTexto2}
+        /> 
+      <label>Foto de usuario</label>
+      <input type="img"
+        placeholder="Insira um url de img"
+        value={inputTexto3}
+        onChange={handleInputTexto3}
+        /> 
+         <button onClick={addTexto1}>Publicar</button>
+       </Form>
+        
+        
+        </div>)
+        
+    
 }
 
 export default App;
