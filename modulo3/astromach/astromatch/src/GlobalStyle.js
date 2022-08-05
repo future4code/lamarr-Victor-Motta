@@ -4,10 +4,12 @@ export const GlobalStyle = createGlobalStyle`
 
 h1{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rebeccapurple;
     text-align: center;
-
+    background: -webkit-linear-gradient(#fc466b, #3f5efb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 h2{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -15,7 +17,7 @@ h3{
     font-family: 'Courier New', Courier, monospace;
 }
 p{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 `

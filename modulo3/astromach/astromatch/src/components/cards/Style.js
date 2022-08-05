@@ -10,7 +10,8 @@ width:30vw ;
 
 `
 export const ProfilePhoto= styled.img`
-width: 60%;
+max-width: 350px;
+max-height:250px;
 border-radius: 8%;
 `
 export const Buttons = styled.section`
@@ -19,21 +20,25 @@ justify-content: space-around;
 `
 
 export const ButtonYes= styled.button`
-height: 30px;
-width: 70px;
+height: 40px;
+width: 90px;
 margin: 10px;
+border: none;
+border-radius:8px;
 
-background-color: green;
+background-color: #3f5efb;
     :hover{
         background-color: lightgreen;
     }
 
 `
 export const ButtonNo= styled.button`
-height: 30px;
-width: 70px;
+height: 40px;
+width: 90px;
 margin: 10px;
-background-color:red;
+background-color:#fc466b;
+border: none;
+border-radius:8px;
 :hover{
         background-color: pink;}
 `
