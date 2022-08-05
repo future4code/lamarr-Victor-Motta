@@ -1,7 +1,7 @@
 
 import './App.css';
 import { GlobalStyle } from './GlobalStyle';
-import { Homepage } from './pages/Homepage';
+import { Homepage } from './pages/home/Homepage';
 
 
 function App() {
