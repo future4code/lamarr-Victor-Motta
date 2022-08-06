@@ -34,8 +34,6 @@ export function MatchCards(){
 
 
 
-
-
 return(
     <Container>
         <Header/>
@@ -43,8 +41,10 @@ return(
         <h2>{profile.name}, {profile.age}</h2>
         <p>{profile.bio}</p>
            <Buttons>
-        <ButtonNo  onClick={() => getProfile(setProfile)}>No</ButtonNo>
-        <ButtonYes onClick={() => CreateMatch(profile.id)}>Yes</ButtonYes>
+        <ButtonNo  onClick={() => getProfile(setProfile)}>	
+       Nop</ButtonNo>
+        <ButtonYes onClick={() => CreateMatch(profile.id)}>	
+Yes!</ButtonYes>
         </Buttons>
     </Container>
 
