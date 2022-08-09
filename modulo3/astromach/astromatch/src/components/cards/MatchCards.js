@@ -1,5 +1,4 @@
-import { GlobalStyleComponent } from "styled-components"
-import styled from "styled-components"
+
 import { Container, ButtonYes, ButtonNo, Buttons, ProfilePhoto } from "./Style"
 import { useEffect, useState } from "react"
 import { getProfile } from "../constantes/Constantes"
@@ -17,7 +16,7 @@ export function MatchCards(){
 
     async function CreateMatch(id) {
         try {
-          const response = await axios.post(
+           await axios.post(
             "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/guilherme/choose-person",
             {
               id: id,

@@ -1,4 +1,3 @@
-import { GlobalStyle } from "../../GlobalStyle";
 
 export function Header () {
     return(
