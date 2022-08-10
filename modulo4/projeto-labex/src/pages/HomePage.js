@@ -1,5 +1,5 @@
 import React from "react";
-import {  goToAdminHomePage, goToListTripsPage } from "../components/Coordinator";
+import { goToListTripsPage, goToLoginPage } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 
 
@@ -10,8 +10,8 @@ export function Homepage() {
       <div>
         <h1>LabeX</h1>
         <p>HomePage.js  → Para o usuário escolher entre Área Administrativa e Lista de Viagens</p>
-        <button onClick={()=>{goToListTripsPage(navigate,)}}>Viagens</button>
-        <button onClick={()=>{goToAdminHomePage(navigate,)}}>Admin</button>
+        <button onClick={()=>{goToListTripsPage(navigate)}}>Viagens</button>
+        <button onClick={()=>{goToLoginPage(navigate)}}>Admin</button>
       </div>
     );
   }
