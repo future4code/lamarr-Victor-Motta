@@ -17,7 +17,7 @@ export function MatchCards(){
     async function CreateMatch(id) {
         try {
            await axios.post(
-            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/guilherme/choose-person",
+            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/victor/choose-person",
             {
               id: id,
               choice: true,
