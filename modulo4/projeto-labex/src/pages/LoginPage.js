@@ -1,8 +1,9 @@
 import React from "react";
-import {  goToAdminHomePage, goToBack } from "../components/Coordinator";
+import {  goToBack } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import { useForm } from "../hooks/useForm";
+
 
 export function LoginPage() {
   const navigate=useNavigate();
@@ -11,14 +12,19 @@ export function LoginPage() {
 
   const loginStart = (event) => {
     event.preventDefault()
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/login",
+    axios
+    .post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/login",
     form)
-    .then((response) => console.log(response.data))
+    .then((response) => {
+      localStorage.setItem("token",response.data.token);
+      navigate("/admin/trips/list")
+    })
     .catch((error) => console.log(error.message))
     clear();
   }
 
   return (
+
     <div>
       <p>LoginPage.js → Para fazermos login como administrador</p>
       <form onSubmit={loginStart}>
@@ -51,7 +57,7 @@ export function LoginPage() {
       </form>
        
       {/* <button onClick={()=>{goToAdminHomePage(navigate)}}>Entrar</button> */}
-    </div>
+      </div>
    
   );
 }

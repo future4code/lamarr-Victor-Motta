@@ -17,7 +17,7 @@ export function ListTripsPage() {
       <p key={trip.id}>Datas: {trip.date}</p> 
       <p key={trip.id}>Duracao: {trip.durationInDays}</p> 
       <p key={trip.id}>Planeta: {trip.planet}</p> 
-      <p key={trip.id}>Descricao{trip.description}</p> 
+      <p key={trip.id}>Descricao: {trip.description}</p> 
       </GeneralCards>
           
 

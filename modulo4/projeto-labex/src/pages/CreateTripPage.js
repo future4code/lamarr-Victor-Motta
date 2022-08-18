@@ -8,9 +8,16 @@ export function CreateTripPage() {
   const navigate=useNavigate();
   const [form, onChange, clear] = useForm({name: "",planet:"",date:"", description:"", durationInDays:""})
 
+  const data = new Date();
+  const dia = String(data.getDate()).padStart(2, '0');
+  const mes = String(data.getMonth() + 1).padStart(2, '0');
+  const ano = data.getFullYear();
+  const dataAtual = dia + '/' + mes + '/' + ano;
+
   const createTrip = (event) => {
     event.preventDefault()
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips",
+    axios
+    .post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips",
     form)
     .then((response) => console.log(response.data))
     .catch((error) => console.log(error.message))
@@ -29,11 +36,26 @@ export function CreateTripPage() {
                     value={form.name}
                     onChange={onChange}
                     type="text" 
+                    pattern={"(.*[a-z]){5}"}
                     required >
                     </input>
             </li>
-          <li><select
-          value={form.planet}/>
+          <li> <select placeholder={"Planeta"}
+            onChange={onChange}
+            value={form.planet}
+            name={"planet"}
+            type={"text"}
+            required>
+            <option key="Mercúrio" value="Mercúrio">Mercúrio</option>
+            <option key="Vênus" value="Vênus">Vênus</option>
+            <option key="Terra" value="Terra">Terra</option>
+            <option key="Marte" value="Marte">Marte</option>
+            <option key="Júpter" value="Júpter">Júpter</option>
+            <option key="Saturno" value="Saturno">Saturno</option>
+            <option key="Urano" value="Urano">Urano</option>
+            <option key="Netuno" value="Netuno">Netuno</option>
+            <option key="Plutão" value="Plutão">Plutão</option>
+          </select>
             </li>
           <li><input name="date" 
                     id="date" 
@@ -41,15 +63,17 @@ export function CreateTripPage() {
                     value={form.date}
                     onChange={onChange}
                     type="date" 
+                    min={dataAtual}
                     required >
                     </input>
             </li>
           <li><input name="description" 
                     id="description" 
-                    placeholder="Descricao"
+                    placeholder="Min 30 letras"
                     value={form.description}
                     onChange={onChange}
                     type="text" 
+                    pattern={"(?=^.{30,100}$)^([A-Za-z][\s]?)+$"}
                     required >
                     </input>
             </li>
@@ -58,7 +82,8 @@ export function CreateTripPage() {
                     placeholder="Duracao em dias"
                     value={form.durationInDays}
                     onChange={onChange}
-                    type="text" 
+                    type="number" 
+                    min ="50"
                     required >
                     </input>
             </li>

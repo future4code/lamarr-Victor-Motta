@@ -23,16 +23,15 @@ export function ApplicationFormPage() {
         ApplicationFormPage.js → Para o usuário se candidatar à viagens, página que vai ter o formulário de inscrição
         <form onSubmit={aplicationForm}>
           <ul>
-          <li><select
-                //consumo de api?
-                /></li>
           <li><input
                     name="name" 
                     id="name" 
                     placeholder="Nome"
                     value={form.name}
                     onChange={onChange}
+                    pattern={"(.*[a-z]){3}"}
                     type="text" 
+                    title= "O nome deve ter ao menos 3 letras"
                     required 
                 /></li>
           <li><input
@@ -42,6 +41,8 @@ export function ApplicationFormPage() {
                     value={form.age}
                     onChange={onChange}
                     type="number" 
+                    min="18"
+                    title= "você deve ter pelo menos 18 anos para se inscrever"
                     required 
                 /></li>
           <li><input
@@ -51,6 +52,8 @@ export function ApplicationFormPage() {
                     value={form.applicationText}
                     onChange={onChange}
                     type="text" 
+                    pattern={"(.*[a-z]){30}"}
+                    title= "O texto de candidatura deve ter ao menos 30 caracteres"
                     required 
                 /></li>
           <li><input
@@ -60,6 +63,8 @@ export function ApplicationFormPage() {
                     value={form.profession}
                     onChange={onChange}
                     type="text" 
+                    pattern={"(.*[a-z]){10}"}
+                    title= "A profissão deve ter ao menos 10 caracteres"
                     required 
                 /></li>
           <li><input
