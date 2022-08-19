@@ -59,7 +59,7 @@ export function ApplicationFormPage() {
           <li><input
                     name="profession" 
                     id="profession" 
-                    placeholder="Profissao"
+                    placeholder="Profissão"
                     value={form.profession}
                     onChange={onChange}
                     type="text" 
@@ -70,15 +70,13 @@ export function ApplicationFormPage() {
           <li><input
                     name="country" 
                     id="country" 
-                    placeholder="Pais"
+                    placeholder="País"
                     value={form.country}
                     onChange={onChange}
                     type="text" 
                     required 
                 /></li>
-                 <li><select 
-                //consumo de api?
-                /></li>
+                
           </ul>
         </form>
         

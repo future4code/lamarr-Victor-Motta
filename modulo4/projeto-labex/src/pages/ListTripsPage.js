@@ -3,7 +3,7 @@ import {goToBack,goToApplicationFormPage } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import { BASE_URL } from "../constants/Constants";
 import {useRequestDataGet} from "../hooks/useRequestData";
-import { GeneralCards } from "../components/Styled";
+import { GeneralCards} from "../components/Styled";
 
 
 export function ListTripsPage() {

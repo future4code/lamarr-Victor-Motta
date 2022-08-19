@@ -19,9 +19,9 @@ export function LoginPage() {
       localStorage.setItem("token",response.data.token);
       navigate("/admin/trips/list")
     })
-    .catch((error) => console.log(error.message))
+    .catch((error) => alert(error.message))
     clear();
-  }
+  };
 
   return (
 
@@ -53,7 +53,7 @@ export function LoginPage() {
           <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
       <button 
     
-      type="submit">Enviar </button>
+      type="submit">Enviar</button>
       </form>
        
       {/* <button onClick={()=>{goToAdminHomePage(navigate)}}>Entrar</button> */}

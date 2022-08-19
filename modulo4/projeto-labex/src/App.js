@@ -1,5 +1,6 @@
 import { Homepage } from "./pages/HomePage";
 import {Rotas} from "./components/Rotas"
+import './App.css'
 
 function App() {
   return (
