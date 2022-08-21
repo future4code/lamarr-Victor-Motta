@@ -1,7 +1,7 @@
 import React from "react";
 import { goToListTripsPage, goToLoginPage } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
-import { GeneralStyle,GeneralTitle } from "../components/Styled";
+import { GeneralButton, GeneralStyle,GeneralTitle, GenerelContainer } from "../components/Styled";
 
 
 export function Homepage() {
@@ -9,10 +9,10 @@ export function Homepage() {
 
     return (
       <GeneralStyle>
-         <GeneralTitle>LabeX</GeneralTitle>
-        <p>HomePage.js  → Para o usuário escolher entre Área Administrativa e Lista de Viagens</p>
-        <button onClick={()=>{goToListTripsPage(navigate)}}>Viagens</button>
-        <button onClick={()=>{goToLoginPage(navigate)}}>Admin</button>
+         <GeneralTitle>LabeX
+        <GeneralButton onClick={()=>{goToListTripsPage(navigate)}}>Viagens</GeneralButton>
+        <GeneralButton onClick={()=>{goToLoginPage(navigate)}}>Admin</GeneralButton>
+        </GeneralTitle>
       </GeneralStyle>
     );
   }
