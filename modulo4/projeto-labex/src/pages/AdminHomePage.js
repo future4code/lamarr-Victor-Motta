@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useProtectedPage } from "../hooks/useProtectPage";
 
+
 export function AdminHomePage() {
   useProtectedPage()
   const navigate=useNavigate();

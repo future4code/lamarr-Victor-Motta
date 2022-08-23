@@ -22,8 +22,7 @@ export function ApplicationFormPage() {
       <div >
         ApplicationFormPage.js → Para o usuário se candidatar à viagens, página que vai ter o formulário de inscrição
         <form onSubmit={aplicationForm}>
-          <ul>
-          <li><input
+          <input
                     name="name" 
                     id="name" 
                     placeholder="Nome"
@@ -33,8 +32,8 @@ export function ApplicationFormPage() {
                     type="text" 
                     title= "O nome deve ter ao menos 3 letras"
                     required 
-                /></li>
-          <li><input
+                />
+          <input
                     name="age" 
                     id="age" 
                     placeholder="Idade"
@@ -44,8 +43,8 @@ export function ApplicationFormPage() {
                     min="18"
                     title= "você deve ter pelo menos 18 anos para se inscrever"
                     required 
-                /></li>
-          <li><input
+                />
+          <input
                     name="applicationText" 
                     id="applicationText" 
                     placeholder="Diga seus desejos pra gente!"
@@ -55,8 +54,8 @@ export function ApplicationFormPage() {
                     pattern={"(.*[a-z]){30}"}
                     title= "O texto de candidatura deve ter ao menos 30 caracteres"
                     required 
-                /></li>
-          <li><input
+                />
+          <input
                     name="profession" 
                     id="profession" 
                     placeholder="Profissão"
@@ -66,8 +65,8 @@ export function ApplicationFormPage() {
                     pattern={"(.*[a-z]){10}"}
                     title= "A profissão deve ter ao menos 10 caracteres"
                     required 
-                /></li>
-          <li><input
+                />
+         <input
                     name="country" 
                     id="country" 
                     placeholder="País"
@@ -75,9 +74,9 @@ export function ApplicationFormPage() {
                     onChange={onChange}
                     type="text" 
                     required 
-                /></li>
+                />
                 
-          </ul>
+         
         </form>
         
         <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
