@@ -3,7 +3,7 @@ import {goToBack,goToApplicationFormPage } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import { BASE_URL } from "../constants/Constants";
 import {useRequestDataGet} from "../hooks/useRequestData";
-import { CardContainer, GeneralButton, GeneralCards, GeneralH1, GeneralStyle } from "../components/Styled";
+import { CardContainer, GeneralButton, GeneralCards, GeneralH1, GeneralStyleCards } from "../components/Styled";
 
 
 
@@ -14,11 +14,12 @@ export function ListTripsPage() {
 
   const tripList =dataTripList&&dataTripList.trips.map((trip)=>{
     return <GeneralCards>
-      <p key={trip.id}>Nome: {trip.name}</p> 
+      <h2 key={trip.id}> {trip.name}</h2> 
+      <br/>
       <p key={trip.id}>Datas: {trip.date}</p> 
       <p key={trip.id}>Duracao: {trip.durationInDays}</p> 
       <p key={trip.id}>Planeta: {trip.planet}</p> 
-      <p key={trip.id}>Descricao: {trip.description}</p> 
+      <p key={trip.id}>Descrição: {trip.description}</p> 
       <GeneralButton onClick={()=>{goToApplicationFormPage(navigate)}}>Inscrever-se</GeneralButton>
       </GeneralCards>
           
@@ -27,16 +28,15 @@ export function ListTripsPage() {
 
     return (
       
-      <GeneralStyle>
+      <GeneralStyleCards>
        <CardContainer>
         <GeneralH1> Lista de viagens</GeneralH1>
         <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
-        
-       {isLoadingUser&&"...Carregando!"}
+        {isLoadingUser&&"...Carregando!"}
         {!isLoadingUser&&dataTripList&&tripList}
         {!isLoadingUser&&!dataTripList&&erroUser}
         </CardContainer>
-      </GeneralStyle>
+      </GeneralStyleCards>
      
     );
   }

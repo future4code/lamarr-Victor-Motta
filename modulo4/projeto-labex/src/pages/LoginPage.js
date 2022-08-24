@@ -3,6 +3,7 @@ import {  goToBack } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import { useForm } from "../hooks/useForm";
+import { GeneralButton, GeneralH1, GeneralStyle, GeneralTitle } from "../components/Styled";
 
 
 
@@ -26,8 +27,10 @@ export function LoginPage() {
 
   return (
 
-    <div>
-      <p>LoginPage.js → Para fazermos login como administrador</p>
+    <GeneralStyle>
+      <GeneralTitle>
+      <GeneralH1>
+      <GeneralH1>LoginPage</GeneralH1>
       <form onSubmit={loginStart}>
       <label htmlFor="email"> Email: </label>
         <input
@@ -39,7 +42,8 @@ export function LoginPage() {
         type="email"
         required
         />
-      <label htmlFor="password"> Email: </label>
+        <br/>
+      <label htmlFor="password"> Password: </label>
         <input
           name="password"
           id="password"
@@ -51,14 +55,15 @@ export function LoginPage() {
           title="your password must be 6 characters"
           required
           />
-          <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-      <button 
-    
-      type="submit">Enviar</button>
+          <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
+
+          <GeneralButton
+      type="submit">Enviar</GeneralButton>
       </form>
-       
+      </GeneralH1>
+      </GeneralTitle>
       {/* <button onClick={()=>{goToAdminHomePage(navigate)}}>Entrar</button> */}
-      </div>
+      </GeneralStyle>
    
   );
 }

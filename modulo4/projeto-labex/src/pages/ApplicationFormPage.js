@@ -3,6 +3,9 @@ import {  goToBack } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import { useForm } from "../hooks/useForm";
 import { axios } from "axios";
+import { BASE_URL } from "../constants/Constants";
+import { useRequestDataGet } from "../hooks/useRequestData";
+import { GeneralH1, GeneralInputs, GeneralStyle } from "../components/Styled";
 
 export function ApplicationFormPage() {
   const navigate=useNavigate();
@@ -17,12 +20,25 @@ export function ApplicationFormPage() {
     clear();
   }
 
+  const [dataTrip] = useRequestDataGet(
+    `${BASE_URL}trips`
+  );
+  
+  const tripsSelect = dataTrip&&dataTrip.trips.map((data) => {
+    return <option key={data.id}>{data.name}</option>
+})
+
 
     return (
-      <div >
-        ApplicationFormPage.js → Para o usuário se candidatar à viagens, página que vai ter o formulário de inscrição
+      <GeneralStyle>
+        <GeneralH1>Application Form Page</GeneralH1>
         <form onSubmit={aplicationForm}>
-          <input
+        <select id="select">
+          <option disabled>Escolha uma Viagem</option>
+            {tripsSelect}
+          </select>
+
+          <GeneralInputs
                     name="name" 
                     id="name" 
                     placeholder="Nome"
@@ -33,7 +49,7 @@ export function ApplicationFormPage() {
                     title= "O nome deve ter ao menos 3 letras"
                     required 
                 />
-          <input
+          <GeneralInputs
                     name="age" 
                     id="age" 
                     placeholder="Idade"
@@ -44,7 +60,7 @@ export function ApplicationFormPage() {
                     title= "você deve ter pelo menos 18 anos para se inscrever"
                     required 
                 />
-          <input
+          <GeneralInputs
                     name="applicationText" 
                     id="applicationText" 
                     placeholder="Diga seus desejos pra gente!"
@@ -55,7 +71,7 @@ export function ApplicationFormPage() {
                     title= "O texto de candidatura deve ter ao menos 30 caracteres"
                     required 
                 />
-          <input
+          <GeneralInputs
                     name="profession" 
                     id="profession" 
                     placeholder="Profissão"
@@ -66,7 +82,7 @@ export function ApplicationFormPage() {
                     title= "A profissão deve ter ao menos 10 caracteres"
                     required 
                 />
-         <input
+         <GeneralInputs
                     name="country" 
                     id="country" 
                     placeholder="País"
@@ -81,6 +97,6 @@ export function ApplicationFormPage() {
         
         <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
         <button type="submit">Enviar</button>
-      </div>
+      </GeneralStyle>
     );
   }

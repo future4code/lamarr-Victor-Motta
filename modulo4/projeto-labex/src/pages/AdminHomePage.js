@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom"
 import axios from "axios";
 import { useEffect } from "react";
 import { useProtectedPage } from "../hooks/useProtectPage";
+import { GeneralStyle} from "../components/Styled";
 
 
 export function AdminHomePage() {
@@ -26,12 +27,13 @@ export function AdminHomePage() {
     })
 }, [])
     return (
-      <div>
+      <GeneralStyle>
         <p>AdminHomePage.js → Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas</p>
         <button onClick={()=>{goToAdminHomePage(navigate)}}>Voltar</button>
         <button onClick={()=>{goToCreateTripPage(navigate)}}>Criar Viagem</button>
         <button onClick={()=>{goToLoginPage(navigate)}}>Logout</button>
-      </div>
+        
+      </GeneralStyle>
      
     );
   }
