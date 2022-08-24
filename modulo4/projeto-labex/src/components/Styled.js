@@ -12,18 +12,32 @@ background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
 `
+export const BackbroundVideo = styled.video`
+position: absolute;
+width: 100%;
+left: 50%;
+top:50%;
+height: 100%;
+object-fit: cover;
+transform: translate(-50%,-50%);
+z-index: "-1";
 
-export const GeneralTitle = styled.section `
-display: flex;
+`
+
+export const GeneralTitle = styled.div `
+  position: absolute;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  top:0;
+  display: flex;
+  height: 100%;
+  width: 100%;
    p{
-  color: whitesmoke;
+  color: #f1d580;
   font-size: 150px;
   text-shadow: 0 8px 7px black;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
+  font-family: 'Silkscreen', cursive;
   }
 
 `
@@ -31,7 +45,7 @@ export const GeneralH1 = styled.h1`
 font-size: 50px;
 color: whitesmoke;
   text-shadow: 0 10px 7px black;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
+  font-family: 'Silkscreen', cursive;
   
 
 `
@@ -52,9 +66,9 @@ export const GeneralCards =styled.div `
   display:flex;
   text-align:center;
   flex-direction: column;
-  
+  font-family: 'DynaPuff', cursive;
   p{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Coustard', serif;
     font-size: 17px;
     color: white;
     
@@ -90,7 +104,7 @@ export const GeneralButton = styled.button`
 background-image: linear-gradient(to right, #614385 0%, #516395  51%, #614385  100%);
             margin: 10px;
             font-size: 17px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-family: 'Silkscreen', cursive;
             padding: 12px 25px;
             text-align: center;
             text-transform: uppercase;

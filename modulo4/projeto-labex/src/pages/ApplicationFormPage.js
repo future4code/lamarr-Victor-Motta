@@ -5,7 +5,7 @@ import { useForm } from "../hooks/useForm";
 import { axios } from "axios";
 import { BASE_URL } from "../constants/Constants";
 import { useRequestDataGet } from "../hooks/useRequestData";
-import { GeneralH1, GeneralInputs, GeneralStyle } from "../components/Styled";
+import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle } from "../components/Styled";
 
 export function ApplicationFormPage() {
   const navigate=useNavigate();
@@ -95,8 +95,8 @@ export function ApplicationFormPage() {
          
         </form>
         
-        <button onClick={()=>{goToBack(navigate)}}>Voltar</button>
-        <button type="submit">Enviar</button>
+        <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
+        <GeneralButton type="submit">Enviar</GeneralButton>
       </GeneralStyle>
     );
   }
