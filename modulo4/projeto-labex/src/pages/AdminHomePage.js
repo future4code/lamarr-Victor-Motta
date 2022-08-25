@@ -1,38 +1,39 @@
 import React from "react";
-import {  goToAdminHomePage, goToCreateTripPage, goToLoginPage } from "../components/Coordinator";
+import {  goToCreateTripPage, goToLoginPage, goToPageHome } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
-import axios from "axios";
-import { useEffect } from "react";
 import { useProtectedPage } from "../hooks/useProtectPage";
-import { GeneralStyle} from "../components/Styled";
+import { ButtonsContainer, GeneralButton, GeneralCards, GeneralH1, GeneralStyle, GeneralTitle} from "../components/Styled";
+import { BASE_URL } from "../constants/Constants";
+import { useRequestDataGet } from "../hooks/useRequestData";
 
 
 export function AdminHomePage() {
   useProtectedPage()
   const navigate=useNavigate();
+  const [dataTrip] = useRequestDataGet(
+    `${BASE_URL}trips`
+  );
+  
+  const RequisitonTrip = dataTrip&&dataTrip.trips.map((data) => {
+    return <GeneralCards>
+      <p key={data.id}>{data.name}</p>
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
+      </GeneralCards>
+})
 
-    axios.get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trip/NoIFVcOiSgTKTIPVZwXS",
-    {
-        headers: {
-            auth: token
-        }
-    }).then((response) => {
-        console.log(response.data)
-    }).catch((error) => {
-        console.log("Error: ", error.response)
-    })
-}, [])
+
     return (
       <GeneralStyle>
-        <p>AdminHomePage.js → Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas</p>
-        <button onClick={()=>{goToAdminHomePage(navigate)}}>Voltar</button>
-        <button onClick={()=>{goToCreateTripPage(navigate)}}>Criar Viagem</button>
-        <button onClick={()=>{goToLoginPage(navigate)}}>Logout</button>
-        
+        <GeneralTitle>
+        <GeneralH1>Admin Home-Page
+        </GeneralH1>
+        {RequisitonTrip}
+        <ButtonsContainer>
+        <GeneralButton onClick={()=>{goToPageHome(navigate)}}>Voltar</GeneralButton>
+        <GeneralButton onClick={()=>{goToCreateTripPage(navigate)}}>Criar Viagem</GeneralButton>
+        <GeneralButton onClick={()=>{goToLoginPage(navigate)}}>Logout</GeneralButton>
+        </ButtonsContainer>
+        </GeneralTitle>
       </GeneralStyle>
      
     );

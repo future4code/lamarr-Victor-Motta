@@ -2,18 +2,19 @@ import React from "react";
 import {  goToBack } from "../components/Coordinator";
 import {useNavigate} from "react-router-dom"
 import { useForm } from "../hooks/useForm";
-import { axios } from "axios";
+import  axios  from "axios";
 import { BASE_URL } from "../constants/Constants";
 import { useRequestDataGet } from "../hooks/useRequestData";
 import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle } from "../components/Styled";
 
 export function ApplicationFormPage() {
   const navigate=useNavigate();
-  const [form, onChange, clear] = useForm({name: "",age:"",applicationText:"", profession:"", country:""})
+  const [form, onChange, clear] = useForm({name: "", age:"",applicationText:"", profession:"", country:""})
 
   const aplicationForm = (event) => {
     event.preventDefault()
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips/:id/apply",
+    axios
+    .post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips/NoIFVcOiSgTKTIPVZwXS/apply",
     form)
     .then((response) => console.log(response.data))
     .catch((error) => console.log(error.message))
@@ -67,7 +68,7 @@ export function ApplicationFormPage() {
                     value={form.applicationText}
                     onChange={onChange}
                     type="text" 
-                    pattern={"(.*[a-z]){30}"}
+                    // pattern={"(.*[a-z]){30}"}
                     title= "O texto de candidatura deve ter ao menos 30 caracteres"
                     required 
                 />
@@ -92,11 +93,11 @@ export function ApplicationFormPage() {
                     required 
                 />
                 
+        <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
+        <GeneralButton type="submit">Enviar</GeneralButton>
          
         </form>
         
-        <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
-        <GeneralButton type="submit">Enviar</GeneralButton>
       </GeneralStyle>
     );
   }

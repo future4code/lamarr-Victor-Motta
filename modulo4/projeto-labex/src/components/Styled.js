@@ -23,7 +23,6 @@ transform: translate(-50%,-50%);
 z-index: "-1";
 
 `
-
 export const GeneralTitle = styled.div `
   position: absolute;
   flex-direction: column;
@@ -36,7 +35,7 @@ export const GeneralTitle = styled.div `
    p{
   color: #f1d580;
   font-size: 150px;
-  text-shadow: 0 8px 7px black;
+  text-shadow: 0 12px 12px black;
   font-family: 'Silkscreen', cursive;
   }
 
@@ -47,17 +46,16 @@ color: whitesmoke;
   text-shadow: 0 10px 7px black;
   font-family: 'Silkscreen', cursive;
   
-
 `
-
 export const XColor = styled.span`
 color: #614385;
 
 `
 export const GeneralCards =styled.div `
   background-color: #15172b;
+  opacity:0.9;
   border-radius: 15px;
-  height: 30vh;
+  height: auto;
   width: 30vw;
   padding: 15px;
   margin:10px;
@@ -71,8 +69,10 @@ export const GeneralCards =styled.div `
     font-family: 'Coustard', serif;
     font-size: 17px;
     color: white;
-    
   }
+  h2{
+  color:white;
+}
 
 `
 export const CardContainer = styled.div`
@@ -80,9 +80,7 @@ display:flex;
 flex-direction: column;
 justify-content:center;
 align-items: center;
-h2{
-  color:white;
-}
+
 
 
 `
@@ -92,7 +90,7 @@ export const GeneralInputs = styled.input`
   margin: 10px;
   background: whitesmoke;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   ::placeholder {
     color: #614385;
   }
@@ -123,5 +121,8 @@ background-image: linear-gradient(to right, #614385 0%, #516395  51%, #614385  1
             text-decoration: none;
     }
 `
-
+export const ButtonsContainer = styled.div`
+display: flex;
+justify-content:center;
+`
          

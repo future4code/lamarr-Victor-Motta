@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "../hooks/useForm";
 import { useProtectedPage } from "../hooks/useProtectPage";
+import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle, CardContainer,ButtonsContainer } from "../components/Styled";
+
 
 export function CreateTripPage() {
   const navigate = useNavigate();
@@ -43,14 +45,13 @@ export function CreateTripPage() {
   const dataAtual = dia + "/" + mes + "/" + ano;
 
   return (
-    <div>
-      <p>
-        CreateTripPage.js → Formulário para o administrador criar uma nova
-        viagem
-      </p>
-     
+    <GeneralStyle>
+      <CardContainer>
+      <GeneralH1>
+        Create Trip Page
+      </GeneralH1>
       <form onSubmit={createTrip}>
-        <input
+        <GeneralInputs
           name="name"
           id="name"
           placeholder="Nome"
@@ -59,7 +60,7 @@ export function CreateTripPage() {
           type="text"
           pattern={"(.*[a-z]){5}"}
           required
-        ></input>
+        ></GeneralInputs>
         <br />{" "}
         <select
           placeholder={"Planeta"}
@@ -99,7 +100,7 @@ export function CreateTripPage() {
           </option>
         </select>
         <br />
-        <input
+        <GeneralInputs
           name="date"
           id="date"
           placeholder="Data"
@@ -108,9 +109,9 @@ export function CreateTripPage() {
           type="date"
           min={dataAtual}
           required
-        ></input>
+        ></GeneralInputs>
         <br />
-        <input
+        <GeneralInputs
           name="description"
           id="description"
           placeholder="Min 30 letras"
@@ -119,9 +120,9 @@ export function CreateTripPage() {
           type="text"
           pattern={".{30,100}$"}
           required
-        ></input>
+        ></GeneralInputs>
         <br />
-        <input
+        <GeneralInputs
           name="durationInDays"
           id="durationInDays"
           placeholder="Duracao em dias"
@@ -130,26 +131,27 @@ export function CreateTripPage() {
           type="number"
           min="50"
           required
-        ></input>
+        ></GeneralInputs>
         <br />
-        <button
+        < ButtonsContainer>
+        <GeneralButton
           onClick={() => {
             goToPageHome(navigate);
           }}
         >
           Logout
-        </button>
-        <button
+        </GeneralButton>
+        <GeneralButton
           onClick={() => {
             goToListTripsPage(navigate);
           }}
         >
           Lista
-        </button>
-        <button type="submit">Enviar</button>
-        
+        </GeneralButton>
+        <GeneralButton type="submit">Enviar</GeneralButton>
+        </ButtonsContainer>
       </form>
-    
-    </div>
+      </CardContainer>
+    </GeneralStyle>
   );
 }
