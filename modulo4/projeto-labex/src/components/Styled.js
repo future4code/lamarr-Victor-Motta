@@ -81,10 +81,9 @@ flex-direction: column;
 justify-content:center;
 align-items: center;
 
-
-
 `
 export const GeneralInputs = styled.input`
+  width:30vw;
  font-size: 18px;
   padding: 10px;
   margin: 10px;
@@ -95,6 +94,18 @@ export const GeneralInputs = styled.input`
     color: #614385;
   }
 
+`
+export const GeneralSelect = styled.select`
+  width:32vw;
+ font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+  background: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  ::placeholder {
+    color: #614385;
+  }
 `
 
 export const GeneralButton = styled.button`

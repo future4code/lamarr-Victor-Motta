@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useForm } from "../hooks/useForm";
 import { useProtectedPage } from "../hooks/useProtectPage";
-import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle, CardContainer,ButtonsContainer } from "../components/Styled";
+import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle, CardContainer,ButtonsContainer, GeneralSelect } from "../components/Styled";
 
 
 export function CreateTripPage() {
@@ -62,7 +62,7 @@ export function CreateTripPage() {
           required
         ></GeneralInputs>
         <br />{" "}
-        <select
+        <GeneralSelect
           placeholder={"Planeta"}
           onChange={onChange}
           value={form.planet}
@@ -98,7 +98,7 @@ export function CreateTripPage() {
           <option key="Plutão" value="Plutão">
             Plutão
           </option>
-        </select>
+        </GeneralSelect>
         <br />
         <GeneralInputs
           name="date"

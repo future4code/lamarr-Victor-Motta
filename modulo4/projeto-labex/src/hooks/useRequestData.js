@@ -18,7 +18,7 @@ export const useRequestDataGet=(url)=>{
           setIsLoading(false)
           setErro(error)
         })
-      }, [])
+      }, [url])
 
     return [data,isLoading,erro];
 }

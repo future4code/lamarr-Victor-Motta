@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom"
 import { BASE_URL } from "../constants/Constants";
 import {useRequestDataGet} from "../hooks/useRequestData";
 import { CardContainer, GeneralButton, GeneralCards, GeneralH1, GeneralStyleCards } from "../components/Styled";
-import { Spinner } from '@chakra-ui/react'
+
 
 
 
@@ -32,7 +32,7 @@ export function ListTripsPage() {
        <CardContainer>
         <GeneralH1> Lista de viagens</GeneralH1>
         <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
-        {isLoadingUser&&<Spinner />}
+        {isLoadingUser&&"loading..."}
         {!isLoadingUser&&dataTripList&&tripList}
         {!isLoadingUser&&!dataTripList&&erroUser}
         </CardContainer>

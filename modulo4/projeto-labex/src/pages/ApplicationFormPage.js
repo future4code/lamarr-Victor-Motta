@@ -5,16 +5,17 @@ import { useForm } from "../hooks/useForm";
 import  axios  from "axios";
 import { BASE_URL } from "../constants/Constants";
 import { useRequestDataGet } from "../hooks/useRequestData";
-import { GeneralButton, GeneralH1, GeneralInputs, GeneralStyle } from "../components/Styled";
+import { ButtonsContainer, CardContainer, GeneralButton, GeneralH1, GeneralInputs, GeneralSelect, GeneralStyle } from "../components/Styled";
+
 
 export function ApplicationFormPage() {
   const navigate=useNavigate();
   const [form, onChange, clear] = useForm({name: "", age:"",applicationText:"", profession:"", country:""})
-
+  
   const aplicationForm = (event) => {
     event.preventDefault()
     axios
-    .post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips/NoIFVcOiSgTKTIPVZwXS/apply",
+    .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor-motta-lamarr/trips/NoIFVcOiSgTKTIPVZwXS/apply`,
     form)
     .then((response) => console.log(response.data))
     .catch((error) => console.log(error.message))
@@ -29,16 +30,16 @@ export function ApplicationFormPage() {
     return <option key={data.id}>{data.name}</option>
 })
 
-
     return (
       <GeneralStyle>
+         <CardContainer>
         <GeneralH1>Application Form Page</GeneralH1>
         <form onSubmit={aplicationForm}>
-        <select id="select">
-          <option disabled>Escolha uma Viagem</option>
+        <GeneralSelect  id="select">
+          <option>Escolha uma Viagem</option>
             {tripsSelect}
-          </select>
-
+          </GeneralSelect>
+          <br/>
           <GeneralInputs
                     name="name" 
                     id="name" 
@@ -50,6 +51,7 @@ export function ApplicationFormPage() {
                     title= "O nome deve ter ao menos 3 letras"
                     required 
                 />
+                <br/>
           <GeneralInputs
                     name="age" 
                     id="age" 
@@ -61,6 +63,7 @@ export function ApplicationFormPage() {
                     title= "você deve ter pelo menos 18 anos para se inscrever"
                     required 
                 />
+                <br/>
           <GeneralInputs
                     name="applicationText" 
                     id="applicationText" 
@@ -72,6 +75,7 @@ export function ApplicationFormPage() {
                     title= "O texto de candidatura deve ter ao menos 30 caracteres"
                     required 
                 />
+                <br/>
           <GeneralInputs
                     name="profession" 
                     id="profession" 
@@ -83,6 +87,7 @@ export function ApplicationFormPage() {
                     title= "A profissão deve ter ao menos 10 caracteres"
                     required 
                 />
+                <br/>
          <GeneralInputs
                     name="country" 
                     id="country" 
@@ -92,12 +97,12 @@ export function ApplicationFormPage() {
                     type="text" 
                     required 
                 />
-                
+           <ButtonsContainer>     
         <GeneralButton onClick={()=>{goToBack(navigate)}}>Voltar</GeneralButton>
         <GeneralButton type="submit">Enviar</GeneralButton>
-         
+        </ButtonsContainer>
         </form>
-        
+        </CardContainer>
       </GeneralStyle>
     );
   }
