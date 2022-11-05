@@ -1,5 +1,5 @@
-import {user, UserType} from "./type"
-export let users:user[] = [
+import {User, UserType} from "./type"
+export let users:User[] = [
     {
         id: 1,
         name: "Alice",
