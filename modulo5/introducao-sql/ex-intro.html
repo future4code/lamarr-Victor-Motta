@@ -1,0 +1,116 @@
+### Exercício 1
+a) CREATE TABLE - Cria Tabela
+    VARCHAR(n) - String com no máximo N caracteres
+    DATE - Representa data (YYYY-MM-DD)
+    NOT NULL - Indica se a coluna pode ser nula
+    PRIMARY KEY - Chave primária (chave única na tabela)
+
+b)  O comando SHOW DATABASES informa o nome o schema
+     O comando SHOW TABLES informa o nome da tabela dentro do Schema.
+
+
+c) O comando DESCRIBE Actor exibe os dados da tabela criada de forma estruturada.
+
+### Exercicio 2
+a)
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "002", 
+  "Gloria Piress",
+  1200000,
+  "1963-08-23", 
+  "female"
+);
+
+b) Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'
+O erro foi gerado pois ambas tinham o mesmo id, pois como utilizamos o comando, PRIMARY KEY, ele designina que cada info seja unica.
+
+c) Error Code: 1136. Column count doesn't match value count at row 1
+O erro foi gerado pois nao foi especificado as colunas de data e genero.
+
+d) Error Code: 1364. Field 'name' doesn't have a default value
+O erro foi gerado pois o campo name nao teve um valor pre-definido, na ciracao das tabelas, decalramos que o valor name, nao pode constar como nulo.
+
+e) Error Code: 1292. Incorrect date value: '1950' for column 'birth_date' at row 1
+E erro foi gerado pois a data nao estava declarada como string, e sim em numeros. Ou seja, estavam faltando as aspas ""
+
+### Exercicio 3
+a) SELECT * from Actor WHERE gender = "female"
+b) SELECT name, salary from Actor WHERE name = "Tony Ramos";
+c) SELECT * from Actor WHERE gender = "invalid";
+
+A tabela retornou vazia, pois todas as informacoes da coluna gender estavam prenchidas.
+
+d) SELECT id, name, salary from Actor WHERE salary <= 500000;
+
+e) Error Code: 1054. Unknown column 'nome' in 'field list'
+O erro ocorreu pois a culuna "nome" nao existe, estamos utilizando o termo "name"
+>SELECT id, name from Actor WHERE id = "002"
+
+### Exercicio 4
+a) Ele busca todas as infos da tabela Actor e filtra qual informacao quer pegar, nesse caso ele pegou todos os atores que a primeira letra comeca com "a" ou "j" e tem os salarios a cima de 300000.
+
+b) SELECT * FROM Actor
+WHERE (name NOT LIKE"A%") AND salary > 350000;
+
+c) SELECT * FROM Actor
+WHERE name LIKE "%G%" OR name LIKE"%g%";
+
+d) SELECT * FROM Actor
+WHERE (name LIKE "%G%" OR name LIKE"%g%"  OR name LIKE"%a%") AND salary BETWEEN 350000 AND 900000;
+
+### Exercicio 5
+a) CREATE TABLE Movies (
+    id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR (255) NOT NULL,
+    sinopse TEXT NOT NULL,
+    release_date DATE NOT NULL,
+    evaluation INT NOT NULL
+);
+INSERT INTO Movies (id, title, sinopse, release_date, evaluation)
+VALUES(
+  "001", 
+  "Se Eu Fosse Você",
+ "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+  "2006-01-06", 
+  7
+);
+INSERT INTO Movies (id, title, sinopse, release_date, evaluation)
+VALUES(
+  "002", 
+  "Doce de mãe",
+ "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
+  "2012-12-27", 
+  10
+);
+INSERT INTO Movies (id, title, sinopse, release_date, evaluation)
+VALUES(
+  "003", 
+  "Dona Flor e Seus Dois Maridos",
+ "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+  "2017-11-02", 
+  18
+);
+INSERT INTO Movies (id, title, sinopse, release_date, evaluation)
+VALUES(
+  "004", 
+  "O ensaio sobre a cegueira",
+ "Uma inédita e inexplicável epidemia de cegueira atinge uma cidade. Chamada de cegueira branca, já que as pessoas atingidas apenas passam a ver uma superfície leitosa, a doença surge inicialmente em um homem no trânsito e, pouco a pouco, se espalha pelo país.",
+  "2008-09-12", 
+  9
+);
+
+### Exercicio 6
+a) SELECT id, title, evaluation FROM Movies WHERE id = "001";
+b) SELECT * FROM Movies WHERE title = "O ensaio sobre a cegueira";
+c) SELECT id, title, sinopse FROM Movies WHERE evaluation >= 7
+
+### Exercicio 7
+a) SELECT title from Movies WHERE title LIKE "%Vida%"
+
+b) SELECT title from Movies WHERE title LIKE "%Cegueira%" OR sinopse LIKE "%Cegueira%";
+
+c) SELECT title, release_date from Movies WHERE release_date < "2022-11-08"
+
+d) SELECT title FROM Movies WHERE release_date < "2022-11-08" AND (title LIKE "%cegueira%" OR sinopse LIKE "CEGUEIRA") AND evaluation > 7
+
