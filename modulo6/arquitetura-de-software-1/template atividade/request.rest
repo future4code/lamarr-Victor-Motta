@@ -1,0 +1,13 @@
+
+GET  http://localhost:3003/test
+
+###
+
+POST http://localhost:3003/createUser 
+Content-Type: application/json
+
+{
+	"name": "Guizera o goleiro frango",
+	"email": "gui@frango.com",
+	"password": "ronaldo"	
+}
