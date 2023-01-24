@@ -1,0 +1,26 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "email@email.com",
+    "password": "23432535"
+}
+###
+GET http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "FILME",
+    "description": "FILME MUITO BOM",
+    "duration_in_minutes": "130",
+    "year_of_release": "2023",
+}
+
+###
+GET http://localhost:3003/movie/getAll
+Content-Type: application/json
