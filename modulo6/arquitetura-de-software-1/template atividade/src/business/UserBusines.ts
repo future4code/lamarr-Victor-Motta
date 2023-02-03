@@ -31,9 +31,14 @@ export class UserBusiness {
     }
   };
 
-  getUsers = async (input: any): Promise<void> => {
-
+  getUsers = async get(): Promise<void> => {
+    
+    try{
+    return await new userDatabase().get();
+  }
+  catch (error: any) {
+    throw new Error(error.message);
   };
-
+  }
   deleteUser = () => {};
 }
